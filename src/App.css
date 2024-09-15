@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animations to elements */
+body {
+  background: linear-gradient(to right, 
+    #a5a58d,  /* Light olive green */
+    #9e9e6b,  /* Muted greenish-yellow */
+    #8a8a5d,  /* Duller green */
+    #56562f,  /* Medium olive green */
+    #424229); /* Darker olive gray */
+
+    font-family: 'Amiri', serif;
+
+}
+
+textarea {
+  margin: 20px;
+  width: 300px;
+  height: 500px;
+  background-color: #606c60;
+  border-radius: 20px;
+  animation: slideInFromBottom 2s ease-out;
+}
+
+textarea::placeholder {
+  color: white;
+  font-size: 25px;
+}
+
+.add-button {
+  background: linear-gradient(to right, #795d2a, #604f2e);
+  color: white;
+  padding: 10px 40px;
+  margin: 20px;
+  border-radius: 15px;
+  border: 0.5px solid black;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-size:20px;
+  animation: slideInFromLeft 1.5s ease-out;
+}
+
+.add-button:active {
+  background-color: #372d1a;
+  width: 120px;
+  height: 40px;
+}
+
+.input-date {
+  background-color:#635d3b;
+  color:white;
+  font-size:15px;
+  border-radius:10px;
+  padding: 10px;
+  animation: slideInFromTop 1.8s ease-out;
+}
+
+.diary-cont {
+  background-image: url('../images/old-paper.jpg');
+  background-size: cover;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 5px 5px 5px rgba(51, 46, 46, 0.3);
+  animation: slideInFromRight 1s ease-out;
+}
+
+.show-rest {
+  background-color: #8a6633;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 2.5px solid silver;
+  cursor: pointer;
+  animation: slideInFromBottom 1s ease-out;
+}
+.back-home{
+  background-color:olive;
+  color:white;
+  padding:10px 10px;
+  border-radius:20px;
+  box-shadow:5px 5px 5px rgba(51, 46, 46, 0.3);
+}
+button:active{
+  background-color:#363626;
+}
+.delete-button{
+  background-color: #8a6633;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 2.5px solid silver;
+  cursor: pointer;
+  animation: slideInFromBottom 1s ease-out;
+}
