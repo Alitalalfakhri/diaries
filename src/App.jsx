@@ -2,7 +2,7 @@ import './App.css'
 import Input from './input.jsx'
 import {useState} from 'react'
 import FullSize from './fullsize.jsx'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 export default function App() {
