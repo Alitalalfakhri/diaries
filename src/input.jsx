@@ -16,7 +16,7 @@ export default function Input(props) {
 
   }
   const containerStyle = {
-    backgroundImage: 'url(photo)',
+    backgroundImage: `url(${photo})`,
   backgroundSize: 'cover',
   borderRadius: '20px',
   padding: '20px',
