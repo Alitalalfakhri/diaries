@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './App.css';
-
+import photo from "../old-paper.jpg"
 export default function Input(props) {
   const footer ={
     display: 'flex',
@@ -15,6 +15,14 @@ export default function Input(props) {
    fontSize:'20px'
 
   }
+  const containerStyle = {
+    backgroundImage: 'url(photo)',
+  backgroundSize: 'cover',
+  borderRadius: '20px',
+  padding: '20px',
+  margin: '20px',
+  boxShadow:' 5px 5px 5px rgba(51, 46, 46, 0.3)',
+  animation:' slideInFromRight 1s ease-out'}
   const center = {
     display: 'flex',
     justifyContent: 'center',
@@ -93,7 +101,7 @@ export default function Input(props) {
 
       <div>
         {added.map((one) => (
-          <div className="diary-cont" key={one.id}>
+          <div style={containerStyle} className="diary-cont" key={one.id}>
             <div style={center}>
               <h2>
                 {one.diary.slice(0, 100)}{one.diary.length >= 99 && '....'}

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
+
 @keyframes slideInFromBottom {
   from {
     opacity: 0;
@@ -99,15 +100,6 @@ textarea::placeholder {
   animation: slideInFromTop 1.8s ease-out;
 }
 
-.diary-cont {
-  background-image: url('../images/old-paper.jpg');
-  background-size: cover;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-  box-shadow: 5px 5px 5px rgba(51, 46, 46, 0.3);
-  animation: slideInFromRight 1s ease-out;
-}
 
 .show-rest {
   background-color: #8a6633;
