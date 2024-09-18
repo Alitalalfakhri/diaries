@@ -1,32 +1,32 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import './App.css';
-import photo from "../old-paper.jpg"
+import "./App.css";
+import photo from "../old-paper.jpg";
 export default function Input(props) {
-  const footer ={
-    display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    backgroundColor:'grey',
-    color:'white',
-    padding:'20px',
-    margin: '10px 0 0 0 ',
-    borderRadius:'10px',
-   fontSize:'20px'
-
-  }
+  const footer = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "grey",
+    color: "white",
+    padding: "20px",
+    margin: "10px 0 0 0 ",
+    borderRadius: "10px",
+    fontSize: "20px",
+  };
   const containerStyle = {
     backgroundImage: `url(${photo})`,
-  backgroundSize: 'cover',
-  borderRadius: '20px',
-  padding: '20px',
-  margin: '20px',
-  boxShadow:' 5px 5px 5px rgba(51, 46, 46, 0.3)',
-  animation:' slideInFromRight 1s ease-out'}
+    backgroundSize: "cover",
+    borderRadius: "20px",
+    padding: "20px",
+    margin: "20px",
+    boxShadow: " 5px 5px 5px rgba(51, 46, 46, 0.3)",
+    animation: " slideInFromRight 1s ease-out",
+  };
   const center = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   };
 
   const navigate = useNavigate();
@@ -37,7 +37,8 @@ export default function Input(props) {
 
   // Load diary entries from local storage on component mount
   useEffect(() => {
-    const storedEntries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
+    const storedEntries =
+      JSON.parse(localStorage.getItem("diaryEntries")) || [];
     if (storedEntries.length > 0) {
       setAdded(storedEntries);
       setId(storedEntries[storedEntries.length - 1].id + 1); // Set ID to the next number
@@ -68,7 +69,7 @@ export default function Input(props) {
   }
 
   function deleteEntry(entryId) {
-    const updatedEntries = added.filter(entry => entry.id !== entryId);
+    const updatedEntries = added.filter((entry) => entry.id !== entryId);
     setAdded(updatedEntries); // Update the state
   }
 
@@ -82,11 +83,15 @@ export default function Input(props) {
     <>
       <div className="adding-cont">
         <div style={center}>
-          <textarea placeholder="ماذا حصل اليوم ؟" name="diary" onChange={handleChange} value={inputValue} />
+          <textarea
+            placeholder="ماذا حصل اليوم ؟"
+            name="diary"
+            onChange={handleChange}
+            value={inputValue}
+          />
         </div>
         <div style={center}>
           <input
-
             className="input-date"
             name="date"
             onChange={handleDateChange}
@@ -95,7 +100,9 @@ export default function Input(props) {
           />
         </div>
         <div style={center}>
-          <button onClick={add} className="add-button">اضافة</button>
+          <button onClick={add} className="add-button">
+            اضافة
+          </button>
         </div>
       </div>
 
@@ -104,23 +111,37 @@ export default function Input(props) {
           <div style={containerStyle} className="diary-cont" key={one.id}>
             <div style={center}>
               <h2>
-                {one.diary.slice(0, 100)}{one.diary.length >= 99 && '....'}
+                {one.diary.slice(0, 100)}
+                {one.diary.length >= 99 && "...."}
               </h2>
             </div>
             <div style={center}>
               <p>{one.date}</p> {/* Display the date */}
             </div>
             <div style={center}>
-              <button className="show-rest" onClick={() => travel(one.diary, one.date)}>قراءة المزيد</button>
-              <button className="delete-button" onClick={() => deleteEntry(one.id)}>حذف </button> {/* Delete button */}
+              <button
+                className="show-rest"
+                onClick={() => travel(one.diary, one.date)}
+              >
+                قراءة المزيد
+              </button>
+              <button
+                className="delete-button"
+                onClick={() => deleteEntry(one.id)}
+              >
+                حذف{" "}
+              </button>{" "}
+              {/* Delete button */}
             </div>
           </div>
         ))}
       </div>
 
-      <footer style={footer} >
-        صُنع هذا الموقع بواسطة <a href="https://t.me/Web23Dev" target="_blank">علي طلال</a>
-
+      <footer style={footer}>
+        صُنع هذا الموقع بواسطة{" "}
+        <a href="https://t.me/Web23Dev" target="_blank">
+          علي طلال
+        </a>
       </footer>
     </>
   );
